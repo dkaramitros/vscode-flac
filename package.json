@@ -1,0 +1,25 @@
+{
+  "name": "flac",
+  "displayName": "Flac Language Support",
+  "description": "Syntax highlighting for Itasca FLAC input files",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "flac",
+      "aliases": ["Itasca FLAC", "flac"],
+      "extensions": [".dat",".flac",".fis",".in",".inp"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "flac",
+      "scopeName": "source.flac",
+      "path": "./syntaxes/flac.tmLanguage.json"
+    }]
+  }
+}

@@ -1,0 +1,107 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Itasca FLAC",
+    "scopeName": "source.flac",
+    "patterns": [
+        {
+            "include": "#constants"
+        },
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#support"
+        },
+        {
+            "include": "#variables"
+        }
+    ],
+    "repository": {
+        "constants": {
+            "patterns": [
+                {
+                    "match": "\\b\\d+(\\.\\d+)?\\b",
+                    "name": "constant.numeric.flac"
+                }
+            ]
+        },
+        "comments": {
+            "patterns": [
+                {
+                    "begin": ";",
+                    "end": "$",
+                    "name": "comment.line.semicolon.flac"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.flac",
+                    "match": "\\b(if|endif|end_if|def|end|whilestepping|while_stepping)\\b"
+                },
+                {
+                    "match": "\\b(new|title|config|gw|dyn|dynamic|cppudm|ini|initialize|set|gen|generate|gr|grid|model|load|prop|fix|free|int|interface|str|struct)\\b",
+                    "name": "keyword.other.flac"
+                },
+                {
+                    "match": "\\b(pl|plot|pr|print|his|hist|solve|step)\\b",
+                    "name": "keyword.other.flac"
+                },
+                {
+                    "match": "\\b(dens|bulk|shear|poiss|fric|friction|coh|cohesion)\\b",
+                    "name": "keyword.other.flac"
+                },
+                {
+                    "match": "\\b(beam|cable|pile)\\b",
+                    "name": "keyword.other.flac"
+                }
+            ]
+        },
+        "strings": {
+            "name": "string.quoted.double.flac",
+            "begin": "'",
+            "end": "'",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.flac",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "support": {
+            "patterns": [
+                {
+                    "match": "\\b(sin|cos|tan|abs)\\b",
+                    "name": "support.function.flac"
+                }
+            ]
+        },
+        "variables": {
+            "patterns": [
+                {
+                    "match": "\\b(sxx|syy|szz|sxy|sxz|syz|pp|esxx|esyy|eszz)\\b",
+                    "name": "variable.other.flac"
+                },
+                {
+                    "match": "\\b(disp|vel|acc|xd|xdisp|xv|xvel|xa|xacc|yd|ydisp|yv|yvel|ya|yacc|zd|zdisp|zv|zvel|za|zacc)\\b",
+                    "name": "variable.other.flac"
+                },
+                {
+                    "match": "\\b(i|j|x|y|z|dytime|unbal)\\b",
+                    "name": "variable.other.flac"
+                },
+                {
+                    "match": "\\b(hisfile|write)\\b",
+                    "name": "variable.other.flac"
+                }
+            ]
+        }
+    }
+}

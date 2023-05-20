@@ -1,4 +1,4 @@
-# FLAC Readme
+# Readme
 
 This extension adds language support for FLAC and FISH to Visual Studio Code. FLAC (Fast Lagrangian Analysis of Continua) is an explicit finite difference code developed by [Itasca CG](https://www.itascacg.com/). 
 

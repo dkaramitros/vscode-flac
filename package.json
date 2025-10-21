@@ -20,7 +20,8 @@
     "language-configuration.json",
     "syntaxes/",
     "images/",
-    "package.json"
+    "package.json",
+    "LICENSE.md"
   ],
   "icon": "images/icon.png",
   "scripts": {

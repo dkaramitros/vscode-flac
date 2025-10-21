@@ -14,6 +14,7 @@ FLAC (Fast Lagrangian Analysis of Continua) is an explicit finite difference pro
 
 > This extension focuses on *syntax coloring only*. It does *not* include snippets, linting, or code validation.
 
+
 ## Installation
 
 You can install this extension directly from the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/) or by searching *Itasca FLAC* inside VS Code’s Extensions panel.
@@ -30,7 +31,6 @@ If you would like to help extend or refine this extension:
 2. **Clone** your fork locally and install dependencies:
    ```bash
    git clone https://github.com/<your-github-username>/vscode-flac.git
-   cd vscode-flac
    ```
 
 3. Open the project in **VS Code** and press **F5** to launch a new *Extension Development Host* for testing.
@@ -42,9 +42,27 @@ If you would like to help extend or refine this extension:
 If you find an issue, please open it here: [GitHub Issues](https://github.com/dkaramitros/vscode-flac/issues)
 
 
+## Packaging & publishing
+
+### Prerequisites:
+- Install Node.js (https://nodejs.org/) if not already installed.
+- Install vsce (the VS Code Extension Manager):
+```bash
+npm install -g vsce
+```
+
+Create the package (.vsix) from your extension root (the folder containing package.json):
+```bash
+vsce package
+```
+
+Upload your generated .vsix using the Visual Studio Marketplace publisher portal:  
+https://marketplace.visualstudio.com/manage
+
+
 ## Known Issues
 
-- Not all FLAC commands or FISH functions are yet supported.
+- Not all abbreviations are yet supported.
 
 
 ## Release Notes

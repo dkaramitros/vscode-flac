@@ -1,28 +1,73 @@
-# Readme
+# Itasca FLAC Language Support for Visual Studio Code
 
-This extension adds language support for FLAC and FISH to Visual Studio Code. FLAC (Fast Lagrangian Analysis of Continua) is an explicit finite difference code developed by [Itasca CG](https://www.itascacg.com/). 
+This extension provides **syntax highlighting and basic language support** for [Itasca FLAC](https://www.itascacg.com/software/flac) input (`.dat`) files and the **FISH** scripting language.
+
+FLAC (Fast Lagrangian Analysis of Continua) is an explicit finite difference program widely used for geotechnical analysis and design.
+
+---
 
 ## Features
 
-- Colorisation to input files for FLAC (up to version 7)
-- Support for the inbuilt programming language FISH
+- Syntax highlighting for FLAC input files (up to **version 7**)
+- Recognition of **abbreviated FLAC commands**
+- Basic support for **FISH** scripting blocks
+- Comment and number highlighting consistent with FLAC syntax
 
-No snippets or code-checking is provided.
+> *This extension focuses on syntax coloring only.*  
+> It does **not** include snippets, linting, or code validation.
 
-## Requirements
+---
 
-This extension only works with Visual Studio Code.
+## Installation
+
+You can install this extension directly from the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/) or by searching **“Itasca FLAC”** inside VS Code’s Extensions panel.
+
+---
+
+## Contributing
+
+Contributions, suggestions, and pull requests are very welcome!  
+If you would like to help extend or refine this extension:
+
+1. **Fork** the repository on GitHub:  
+   [https://github.com/dkaramitros/vscode-flac](https://github.com/dkaramitros/vscode-flac)
+
+2. **Clone** your fork locally and install dependencies:
+   ```bash
+   git clone https://github.com/<your-github-username>/vscode-flac.git
+   cd vscode-flac
+   ```
+
+3. Open the project in VS Code and press **F5** to launch a new *Extension Development Host* for testing.
+
+4. Make and test your changes (for example, improving highlighting rules in `syntaxes/flac.tmLanguage.json`).
+
+5. Submit a **pull request** with a short description of what you changed and why.
+
+If you find an issue, please open it here: [GitHub Issues](https://github.com/dkaramitros/vscode-flac/issues)
+
+---
 
 ## Known Issues
 
-- Not all FLAC commands are being supported yet.
-- Only popular command shortcuts are colorised.
-- Operators are not highlighted.
+- Not all FLAC commands or FISH functions are yet supported.
 
-Contributions are welcome.
+---
 
 ## Release Notes
 
-This is a pre-release version.
+### 0.0.1
+- Initial release
+- Basic FLAC command and FISH highlighting
+- Support for command abbreviations
 
-**Enjoy!**
+---
+
+## License
+
+Released under the [MIT License](LICENSE).  
+Copyright © 2025 [Dimitris Karamitros](https://github.com/dkaramitros)
+
+---
+
+**Enjoy working with FLAC in VS Code!**

@@ -1,23 +1,22 @@
 # Itasca FLAC Language Support for Visual Studio Code
 
-This extension provides **syntax highlighting and basic language support** for [Itasca FLAC](https://www.itascacg.com/software/flac) input (`.dat`) files and the **FISH** scripting language.
+This extension provides **syntax highlighting and basic language support** for [Itasca *FLAC*](https://www.itascacg.com/software/flac) input (`.dat`) files and the inbuilt *FISH* scripting language.
 
 FLAC (Fast Lagrangian Analysis of Continua) is an explicit finite difference program widely used for geotechnical analysis and design.
 
 
 ## Features
 
-- Syntax highlighting for FLAC input files (up to **version 7**)
+- Syntax highlighting for **FLAC** input files (up to *version 7*)
 - Recognition of **abbreviated FLAC commands**
 - Basic support for **FISH** scripting blocks
 - Comment and number highlighting consistent with FLAC syntax
 
-> *This extension focuses on syntax coloring only.*  
-> It does **not** include snippets, linting, or code validation.
+> This extension focuses on *syntax coloring only*. It does *not* include snippets, linting, or code validation.
 
 ## Installation
 
-You can install this extension directly from the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/) or by searching **“Itasca FLAC”** inside VS Code’s Extensions panel.
+You can install this extension directly from the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/) or by searching *Itasca FLAC* inside VS Code’s Extensions panel.
 
 
 ## Contributing
@@ -34,9 +33,9 @@ If you would like to help extend or refine this extension:
    cd vscode-flac
    ```
 
-3. Open the project in VS Code and press **F5** to launch a new *Extension Development Host* for testing.
+3. Open the project in **VS Code** and press **F5** to launch a new *Extension Development Host* for testing.
 
-4. Make and test your changes (for example, improving highlighting rules in `syntaxes/flac.tmLanguage.json`).
+4. Make and test your changes (e.g., improving highlighting rules in `syntaxes/flac.tmLanguage.json`).
 
 5. Submit a **pull request** with a short description of what you changed and why.
 

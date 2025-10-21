@@ -4,7 +4,6 @@ This extension provides **syntax highlighting and basic language support** for [
 
 FLAC (Fast Lagrangian Analysis of Continua) is an explicit finite difference program widely used for geotechnical analysis and design.
 
----
 
 ## Features
 
@@ -16,13 +15,10 @@ FLAC (Fast Lagrangian Analysis of Continua) is an explicit finite difference pro
 > *This extension focuses on syntax coloring only.*  
 > It does **not** include snippets, linting, or code validation.
 
----
-
 ## Installation
 
 You can install this extension directly from the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/) or by searching **“Itasca FLAC”** inside VS Code’s Extensions panel.
 
----
 
 ## Contributing
 
@@ -46,13 +42,11 @@ If you would like to help extend or refine this extension:
 
 If you find an issue, please open it here: [GitHub Issues](https://github.com/dkaramitros/vscode-flac/issues)
 
----
 
 ## Known Issues
 
 - Not all FLAC commands or FISH functions are yet supported.
 
----
 
 ## Release Notes
 
@@ -61,19 +55,15 @@ If you find an issue, please open it here: [GitHub Issues](https://github.com/dk
 - Basic FLAC command and FISH highlighting
 - Support for command abbreviations
 
----
 
 ## Credits
 
 - Icon artwork for this extension created by [ChatGPT](https://chatgpt.com/).
 
----
 
 ## License
 
 Released under the [MIT License](LICENSE).  
 Copyright © 2025 [Dimitris Karamitros](https://github.com/dkaramitros)
-
----
 
 **Enjoy working with FLAC in VS Code!**

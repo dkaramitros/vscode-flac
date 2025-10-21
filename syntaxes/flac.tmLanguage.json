@@ -1,122 +1,163 @@
 {
-    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-    "name": "Itasca FLAC",
-    "scopeName": "source.flac",
-    "patterns": [
+  "name": "FLAC / FISH",
+  "scopeName": "source.flac",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#operators" },
+    { "include": "#fish-function-block" },
+    { "include": "#primary-commands" },
+    { "include": "#fish-primary" },
+    { "include": "#range-modifier-keywords" },
+    { "include": "#config-solver-options" },
+    { "include": "#variables-mech" },
+    { "include": "#variables-flowthermal" },
+    { "include": "#models" },
+    { "include": "#properties" },
+    { "include": "#structure-keywords" },
+    { "include": "#io-alias-keywords" },
+    { "include": "#fish-intrinsics" },
+    { "include": "#fish-data-access" },
+    { "include": "#fish-io" }
+  ],
+  "repository": {
+    "comments": {
+      "name": "comment.line.semicolon.flac",
+      "match": ";.*$"
+    },
+    "strings": {
+      "name": "string.quoted.double.flac",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        { "name": "constant.character.escape.flac", "match": "\\\\." }
+      ]
+    },
+    "numbers": {
+      "name": "constant.numeric.flac",
+      "match": "(?i)\\b(?:(?:0|[1-9]\\d*)(?:\\.\\d+)?(?:[eE][+-]?\\d+)?)\\b"
+    },
+    "operators": {
+      "name": "keyword.operator.flac",
+      "match": "[+\\-*/=<>!&|^%]+"
+    },
+
+    "primary-commands": {
+      "name": "support.function.command.flac",
+      "match": "(?i)^(?=\\s*)(?:APPLY|ATTACH|CALL|CONFIG|CONTINUE|COPY|CYCLE|DEFINE|END|FIX|FREE|GENERATE|GIIC|GRID|GROUP|HELP|HISTORY|IEBOUNDARY|INITIAL|INTERFACE|INTERIOR|LABEL|MARK|MODEL|MOVIE|NEW|OPT|PAUSE|PLOT|PRINT|PROPERTY|QUIT|RESTORE|RETURN|REZONE|SAVE|SCLIN|SET|SOLVE|STEP|STOP|STRUCTURE|SYSTEM|TABLE|TITLE|TRACK|UNMARK|WATER|WINDOW)\\b"
+    },
+
+    "range-modifier-keywords": {
+      "name": "keyword.other.range.flac",
+      "match": "(?i)\\b(?:from|to|long|short|both|xy|aside|bside|line|segment|adjust|arc|bilinear|circle|column|row|surface|group|mark|region|notnull|nmregion|delete|remove|reset|range|var|rdev|add|multiply|begin|end|skip|vs|continue)\\b"
+    },
+
+    "config-solver-options": {
+      "name": "keyword.other.option.flac",
+      "match": "(?i)\\b(?:ats|axisymmetry|cppudm|creep|dynamic|extra|gwflow|p_stress|thermal|tpflow|auto|clock|force|sratio|step|age|noage|elastic|geometry|update|synchronize|avisc|frac|freq|mass|stiffness|hysteretic|hyst|local|combined|rayleigh|dytime|dydt|dyn|crdt|creeptime|multistep|flow|gwdt|gwtime|implicit|thdt|thtime|fobl|fobu|lmul|umul|latency|fastflow|fastwb|funsat|aunb|munb|echo|message|log|output|autoname|overwrite|pcx|windows|postscript|dxf|emf|jpg|bmp|clipboard|grayscale|bw|color|legend|noscale|foreground|back|fos|associated|bracket|cycles|file|include|exclude|tension|jtension|structure|interface|resolution|perturb|wbulk)\\b"
+    },
+
+    "variables-mech": {
+      "name": "variable.other.mechanical.flac",
+      "match": "(?i)\\b(?:xdisp|ydisp|xacc|yacc|nacc|sacc|xforce|yforce|rforce|pressure|nstress|sstress|sxx|syy|szz|sxy|sig1|sig2|xtraction|ytraction|esxx|esyy|eszz|esxy|ssi|ssi3d|ssr|ssr3d|vsi|vsr|vsxx|vsyy|vszz|vsxy|angle|unbalance|state|asxx|bsxx|csxx|dsxx|asyy|bsyy|csyy|dsyy|aszz|bszz|cszz|dszz|asxy|bsxy|csxy|dsxy|sdif)\\b"
+    },
+
+    "variables-flowthermal": {
+      "name": "variable.other.flowthermal.flac",
+      "match": "(?i)\\b(?:pp|gpp|head|discharge|leakage|well|temperature|flux|source|convection|radiation|tcont|saturation|rsat|fmodulus|ftension|seepage|nwpp|nwdischarge|nwwell|vga|vgp0|vgpcnw|vgpcw|udcoe|xflow|yflow|xconduct|yconduct|thermal|gw|mech|flow|xaccel|yaccel)\\b"
+    },
+
+    "models": {
+      "name": "support.type.model.flac",
+      "match": "(?i)\\b(?:null|elastic|anisotropic|mohr\\-coul|drucker|ubiquitous|ss|subiquitous|dy|cam\\-clay|cysoil|chsoil|hoek\\-brown|mhoek|load|cvisc|cwipp|power|pwipp|viscous|wipp|th_isotropic|th_anisotropic|th_general|th_null|th_ac_isotropic|finn)\\b"
+    },
+
+    "properties": {
+      "name": "support.type.property.flac",
+      "match": "(?i)\\b(?:bulk_mod|shear_mod|density|cohesion|friction|dilation|tension|young|poiss|nuyx|nuzx|xmod|ymod|kshear|qdil|qvol|jangle|jcohesion|jfriction|jdilation|jtension|ctable|ftable|dtable|cptable|ttable|lambda|kappa|mp1|mpc|mv0|mv1|bulk_ref|shear_ref|p_ref|p_ini|rf|dilf|fricf|fricv|bulk_current|shear_current|a_wipp|b_wipp|d_wipp|n_wipp|act_energy|gas_c|temp|e_dot_star|e_primary|e_plastic|et_plastic|ev_plastic|conductivity|spec_heat|thexp|f_rho|f_t0|lconduct|lspec_heat|con1|con2|n_cond|biot_c|permeability|porosity|per_table|por_table)\\b"
+    },
+
+    "structure-keywords": {
+      "patterns": [
         {
-            "include": "#constants"
+          "name": "support.class.structure.type.flac",
+          "match": "(?i)\\b(?:beam|cable|liner|pile|rockbolt|strip|support)\\b"
         },
         {
-            "include": "#comments"
+          "name": "variable.other.structure.node.flac",
+          "match": "(?i)\\b(?:xdis|ydis|xvel|yvel|rvel)\\b"
         },
         {
-            "include": "#keywords"
+          "name": "keyword.other.structure.action.flac",
+          "match": "(?i)\\b(?:fix|free|initial|load|pin|slave|unslave)\\b"
         },
         {
-            "include": "#strings"
-        },
-        {
-            "include": "#support"
-        },
-        {
-            "include": "#variables"
+          "name": "support.type.structure.property.flac",
+          "match": "(?i)\\b(?:area|density|e|i|pmom|radius|kbond|sbond|cs_ncoh|cs_nstiff|tfstrain)\\b"
         }
-    ],
-    "repository": {
-        "constants": {
-            "patterns": [
-                {
-                    "match": "(?:[+-]?\\d*\\.\\d+|[+-]?\\d+)(?:[eE][+-]?\\d+)?\\b",
-                    "name": "constant.numeric.flac"
-                }
-            ]
+      ]
+    },
+
+    "io-alias-keywords": {
+      "name": "keyword.other.io.flac",
+      "match": "(?i)\\b(?:help|line|arrow|plot|history|table|dump|limits|list|max|min|read|write|name|alias|fullpalette|size|both|cross|noheader|number|pen|overlay|sclin|title|movie|block|fill|interval|inverse|magnify|maximum|minimum|zero|color|windows|postscript|dxf|bmp|pcx|jpg|clipboard|aacceleration|aforce|agwater|athermal|avelocity|adynamic|xdisp|ydisp|xvel|yvel|svel|nvel|sys|dir|copy|del|ren|type|axial|moment1|moment2|shear|node|element|xaccel|yaccel|xdisplace|ydisplace|xvelocity|yvelocity)\\b"
+    },
+
+    "fish-primary": {
+      "name": "keyword.control.fish",
+      "match": "(?i)\\b(?:DEFINE|END|IF|THEN|ELSE|ENDIF|END_IF|CASEOF|CASE|ENDCASE|END_CASE|LOOP|ENDLOOP|END_LOOP|WHILESTEPPING|WHILE_STEPPING|SECTION|ENDSECTION|END_SECTION|EXIT|EXIT_SECTION|COMMAND|ENDCOMMAND|END_COMMAND|ARRAY|INT|FLOAT|STRING|CONSTITUTIVE_MODEL|CONSTITUTIVEMODEL|FRIEND|f_prop|OPT)\\b"
+    },
+
+    "fish-function-block": {
+      "name": "meta.function.fish",
+      "begin": "(?i)^(?=\\s*)(DEFINE)\\b",
+      "beginCaptures": { "1": { "name": "storage.type.function.fish" } },
+      "end": "(?i)^(?=\\s*)(END)\\b",
+      "endCaptures": { "1": { "name": "storage.type.function.fish" } },
+      "patterns": [
+        { "include": "#comments" },
+        { "include": "#strings" },
+        { "include": "#numbers" },
+        { "include": "#fish-primary" },
+        { "include": "#fish-intrinsics" },
+        { "include": "#fish-data-access" },
+        { "include": "#operators" }
+      ]
+    },
+
+    "fish-intrinsics": {
+      "name": "support.function.fish",
+      "match": "(?i)\\b(?:abs|acos|asin|atan|atan2|cos|exp|ln|log|sin|sqrt|tan|max|min|sgn|float|int|string|fstring|type|and|or|not|in|out|parse|pre_parse|cparse|error|do_update|get_mem|lose_mem|rez_exe|mat_inverse|mat_transpose|sclose|sopen|sread|swrite)\\b"
+    },
+
+    "fish-data-access": {
+      "patterns": [
+        {
+          "name": "variable.other.fish.scalar.flac",
+          "match": "(?i)\\b(?:error|nerr|ierr|jerr|large|tenflg|s_3dd|s_dyn|s_echo|s_flow|s_imp|s_log|s_mech|s_mess|s_movie|step|cycle|crtime|dytime|gwtime|thtime|igp|jgp|izones|jzones|unbal|mech_ratio|unbflow|fos|fos_f|app_pnt|appgw_pnt|appth_pnt|att_pnt|ieb_pnt|int_pnt|str_pnt|tab_pnt|trac_pnt|udm_pnt|imem|fmem|cf_axi|cf_creep|cf_dyn|cf_ext|cf_gw|cf_ps|cf_therm|cm_max|sm_max|crtdel|dytdel|gwtdel|thtdel|xgrav|ygrav|wdens|wbulk|wbiot|v_ngw|v_nmech|v_ntherm|fc_arg)\\b"
         },
-        "comments": {
-            "patterns": [
-                {
-                    "begin": ";",
-                    "end": "$",
-                    "name": "comment.line.semicolon.flac"
-                }
-            ]
+        {
+          "name": "variable.other.fish.gridpoint.flac",
+          "match": "(?i)\\b(?:x|y|xdisp|ydisp|xvel|yvel|xacc|yacc|xbody|ybody|xforce|yforce|gpp|nwgpp|sat|rsat|temp|tflow|gflow|g2flow|fmod|f2mod|ftens|vga|vgp0|vgpcnw|vgpcw|damp|flags|ex_n|gmsmul)\\b"
         },
-        "keywords": {
-            "patterns": [
-                {
-                    "name": "keyword.control.flac",
-                    "match": "(?i)\\b(if|endif|end_if|def|end|whilestepping|while_stepping)\\b"
-                },
-                {
-                    "match": "(?i)\\b(new|title|config|gw|dyn|dynamic|cppudm|ini|initialize|set|gen|generate|gr|grid|model|load|prop|fix|free|int|interface|str|struct)\\b",
-                    "name": "keyword.other.flac"
-                },
-                {
-                    "match": "(?i)\\b(pl|plot|pr|print|his|hist|solve|step)\\b",
-                    "name": "keyword.other.flac"
-                },
-                {
-                    "match": "(?i)\\b(dens|bulk|shear|poiss|fric|friction|coh|cohesion)\\b",
-                    "name": "keyword.other.flac"
-                },
-                {
-                    "match": "(?i)\\b(beam|cable|pile)\\b",
-                    "name": "keyword.other.flac"
-                }
-            ]
+        {
+          "name": "variable.other.fish.zone.flac",
+          "match": "(?i)\\b(?:sxx|syy|szz|sxy|vsxx|vsyy|vszz|vsxy|ssi|ssr|ssi3d|ssr3d|vsi|vsr|fsr|fsi|ev_plastic|e_plastic|et_plastic|ev_tot|pp|vol_strain|k11|k12|k22|wk11|wk12|wk22|poro2|udcoe|visrat|xflow|yflow|xnwflow|ynwflow|model|state|dy_state|flags|inimodel|zsub|zmsmul|area|density|ex_n|zart|zxbar|z_group|z_model|z_prop|zde11|zde12|zde22|zde33|zdpp|zdrot|zporos|zs11|zs12|zs22|zs33|ztea|zteb|ztec|zted|ztsa|ztsb|ztsc|ztsd|zvisc)\\b"
         },
-        "strings": {
-            "patterns": [
-                {
-                    "name": "string.quoted.single.flac",
-                    "begin": "'",
-                    "end": "'",
-                    "patterns": [
-                        {
-                            "name": "constant.character.escape.flac",
-                            "match": "\\\\."
-                        }
-                    ]
-                },
-                {
-                    "name": "string.quoted.double.flac",
-                    "begin": "\"",
-                    "end": "\"",
-                    "patterns": [
-                        {
-                            "name": "constant.character.escape.flac",
-                            "match": "\\\\."
-                        }
-                    ]
-                }
-            ]
-        },
-        "support": {
-            "patterns": [
-                {
-                    "match": "\\b(sin|cos|tan|abs)\\b",
-                    "name": "support.function.flac"
-                }
-            ]
-        },
-        "variables": {
-            "patterns": [
-                {
-                    "match": "\\b(sxx|syy|szz|sxy|sxz|syz|pp|esxx|esyy|eszz)\\b",
-                    "name": "variable.other.flac"
-                },
-                {
-                    "match": "\\b(disp|vel|acc|xd|xdisp|xv|xvel|xa|xacc|yd|ydisp|yv|yvel|ya|yacc|zd|zdisp|zv|zvel|za|zacc)\\b",
-                    "name": "variable.other.flac"
-                },
-                {
-                    "match": "\\b(i|j|x|y|z|dytime|unbal)\\b",
-                    "name": "variable.other.flac"
-                },
-                {
-                    "match": "\\b(hisfile|write)\\b",
-                    "name": "variable.other.flac"
-                }
-            ]
+        {
+          "name": "support.function.table.fish",
+          "match": "(?i)\\b(?:table|xtable|ytable|table_size)\\b"
         }
+      ]
+    },
+
+    "fish-io": {
+      "name": "support.function.io.fish",
+      "match": "(?i)\\b(?:open|close|read|write|IO_READ|IO_WRITE|IO_FISH|IO_ASCII)\\b"
     }
+  },
+  "injectionSelector": "L:source.flac",
+  "fileTypes": ["flac", "fis", "dat", "sav"],
+  "uuid": "a8f9d4be-6e0c-4e37-bd1d-1f6b8aa4c6f6"
 }

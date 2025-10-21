@@ -56,6 +56,13 @@ Create the package (.vsix) from your extension root (the folder containing packa
 vsce package
 ```
 
+Install locally for testing:
+- In VS Code: Extensions view -> ... -> "Install from VSIX..."
+- or from the command line:
+```bash
+code --install-extension flac-language-0.0.1.vsix
+```
+
 Upload your generated .vsix using the Visual Studio Marketplace publisher portal:  
 https://marketplace.visualstudio.com/manage
 

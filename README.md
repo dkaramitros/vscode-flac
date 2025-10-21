@@ -44,11 +44,11 @@ If you find an issue, please open it here: [GitHub Issues](https://github.com/dk
 
 ## Packaging & publishing
 
-### Prerequisites:
+### Prerequisites
 - Install Node.js (https://nodejs.org/) if not already installed.
 - Install vsce (the VS Code Extension Manager):
 ```bash
-npm install -g vsce
+npm install -g @vscode/vsce
 ```
 
 Create the package (.vsix) from your extension root (the folder containing package.json):

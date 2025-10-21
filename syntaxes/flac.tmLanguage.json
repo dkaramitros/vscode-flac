@@ -171,6 +171,6 @@
     }
   },
   "injectionSelector": "L:source.flac",
-  "fileTypes": ["flac", "fis", "dat", "sav"],
+  "fileTypes": ["flac","fis","dat","in","inp"],
   "uuid": "a8f9d4be-6e0c-4e37-bd1d-1f6b8aa4c6f6"
 }

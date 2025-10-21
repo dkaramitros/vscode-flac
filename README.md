@@ -63,6 +63,12 @@ If you find an issue, please open it here: [GitHub Issues](https://github.com/dk
 
 ---
 
+## Credits
+
+- Icon artwork for this extension created by [ChatGPT](https://chatgpt.com/).
+
+---
+
 ## License
 
 Released under the [MIT License](LICENSE).  

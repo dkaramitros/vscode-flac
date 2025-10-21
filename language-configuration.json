@@ -1,24 +1,34 @@
 {
-    // symbols used as brackets
-    "brackets": [
-        ["{", "}"],
-        ["[", "]"],
-        ["(", ")"]
-    ],
-    // symbols that are auto closed when typing
-    "autoClosingPairs": [
-        ["{", "}"],
-        ["[", "]"],
-        ["(", ")"],
-        ["\"", "\""],
-        ["'", "'"]
-    ],
-    // symbols that can be used to surround a selection
-    "surroundingPairs": [
-        ["{", "}"],
-        ["[", "]"],
-        ["(", ")"],
-        ["\"", "\""],
-        ["'", "'"]
-    ]
+  // Single-line comments start with a semicolon
+  "comments": {
+    "lineComment": ";"
+  },
+
+  // Matching bracket pairs for highlighting
+  "brackets": [
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"]
+  ],
+
+  // Auto-close brackets and quotes when typing
+  "autoClosingPairs": [
+    { "open": "{", "close": "}" },
+    { "open": "[", "close": "]" },
+    { "open": "(", "close": ")" },
+    { "open": "\"", "close": "\"" },
+    { "open": "'", "close": "'" }
+  ],
+
+  // Allow wrapping selections with these pairs
+  "surroundingPairs": [
+    { "open": "{", "close": "}" },
+    { "open": "[", "close": "]" },
+    { "open": "(", "close": ")" },
+    { "open": "\"", "close": "\"" },
+    { "open": "'", "close": "'" }
+  ],
+
+  // Defines what counts as a word (for selection/navigation)
+  "wordPattern": "(-?\\d*\\.?\\d+(?:[eE][+-]?\\d+)?)|([A-Za-z_][A-Za-z0-9_-]*)"
 }

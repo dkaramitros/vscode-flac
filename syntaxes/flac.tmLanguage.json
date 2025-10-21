@@ -5,6 +5,7 @@
     { "include": "#comments" },
     { "include": "#strings" },
     { "include": "#numbers" },
+    { "include": "#punctuation" },
     { "include": "#operators" },
     { "include": "#fish-function-block" },
     { "include": "#primary-commands" },
@@ -41,6 +42,18 @@
     "operators": {
       "name": "keyword.operator",
       "match": "[+\\-*/=<>!&|^%]+"
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "punctuation.separator.comma",
+          "match": ","
+        },
+        {
+          "name": "keyword.operator.assignment",
+          "match": "="
+        }
+      ]
     },
 
     "primary-commands": {

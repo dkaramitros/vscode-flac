@@ -1,0 +1,11 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Grammar",
+      "type": "shell",
+      "command": "npm run build:grammar",
+      "problemMatcher": []
+    }
+  ]
+}

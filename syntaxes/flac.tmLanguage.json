@@ -26,7 +26,7 @@
         "constants": {
             "patterns": [
                 {
-                    "match": "\\b\\d+(\\.\\d+)?\\b",
+                    "match": "(?:[+-]?\\d*\\.\\d+|[+-]?\\d+)(?:[eE][+-]?\\d+)?\\b",
                     "name": "constant.numeric.flac"
                 }
             ]
@@ -44,34 +44,49 @@
             "patterns": [
                 {
                     "name": "keyword.control.flac",
-                    "match": "\\b(if|endif|end_if|def|end|whilestepping|while_stepping)\\b"
+                    "match": "(?i)\\b(if|endif|end_if|def|end|whilestepping|while_stepping)\\b"
                 },
                 {
-                    "match": "\\b(new|title|config|gw|dyn|dynamic|cppudm|ini|initialize|set|gen|generate|gr|grid|model|load|prop|fix|free|int|interface|str|struct)\\b",
+                    "match": "(?i)\\b(new|title|config|gw|dyn|dynamic|cppudm|ini|initialize|set|gen|generate|gr|grid|model|load|prop|fix|free|int|interface|str|struct)\\b",
                     "name": "keyword.other.flac"
                 },
                 {
-                    "match": "\\b(pl|plot|pr|print|his|hist|solve|step)\\b",
+                    "match": "(?i)\\b(pl|plot|pr|print|his|hist|solve|step)\\b",
                     "name": "keyword.other.flac"
                 },
                 {
-                    "match": "\\b(dens|bulk|shear|poiss|fric|friction|coh|cohesion)\\b",
+                    "match": "(?i)\\b(dens|bulk|shear|poiss|fric|friction|coh|cohesion)\\b",
                     "name": "keyword.other.flac"
                 },
                 {
-                    "match": "\\b(beam|cable|pile)\\b",
+                    "match": "(?i)\\b(beam|cable|pile)\\b",
                     "name": "keyword.other.flac"
                 }
             ]
         },
         "strings": {
-            "name": "string.quoted.double.flac",
-            "begin": "'",
-            "end": "'",
             "patterns": [
                 {
-                    "name": "constant.character.escape.flac",
-                    "match": "\\\\."
+                    "name": "string.quoted.single.flac",
+                    "begin": "'",
+                    "end": "'",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.flac",
+                            "match": "\\\\."
+                        }
+                    ]
+                },
+                {
+                    "name": "string.quoted.double.flac",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.flac",
+                            "match": "\\\\."
+                        }
+                    ]
                 }
             ]
         },

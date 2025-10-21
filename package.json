@@ -1,22 +1,43 @@
 {
-  "name": "flac",
-  "displayName": "Flac Language Support",
-  "description": "Syntax highlighting for Itasca FLAC input files",
+  "name": "flac-language",
+  "displayName": "FLAC Language Support",
+  "description": "Syntax highlighting for Itasca FLAC input files.",
   "version": "0.0.1",
+  "publisher": "dkaramitros",
+  "license": "MIT",
+  "homepage": "https://github.com/dkaramitros/vscode-flac",
+  "bugs": {
+    "url": "https://github.com/dkaramitros/vscode-flac/issues"
+  },
+  "keywords": [
+    "flac",
+    "itasca",
+    "syntax",
+    "language"
+  ],
+  "files": [
+    "README.md",
+    "language-configuration.json",
+    "syntaxes/",
+    "images/",
+    "package.json"
+  ],
+  "icon": "images/icon.png",
+  "scripts": {
+    "test": "echo \"No tests\" && exit 0"
+  },
   "engines": {
-    "vscode": "^1.77.0"
+    "vscode": "^1.90.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/dkaramitros/vscode-flac"
   },
-  "categories": [
-    "Programming Languages"
-  ],
+  "categories": ["Programming Languages"],
   "contributes": {
     "languages": [{
       "id": "flac",
-      "aliases": ["Itasca FLAC", "flac"],
+      "aliases": ["Itasca FLAC", "FLAC", "flac"],
       "extensions": [".dat",".flac",".fis",".in",".inp"],
       "configuration": "./language-configuration.json"
     }],

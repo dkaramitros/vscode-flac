@@ -1,2 +1,14 @@
-node_modules
+# Node dependencies
+node_modules/
+
+# Packaged extension file
 *.vsix
+
+# Ignore all VS Code workspace files except debug and build configurations
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# OS-generated
+.DS_Store
+Thumbs.db

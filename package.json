@@ -1,6 +1,6 @@
 {
   "name": "flac-language",
-  "displayName": "FLAC Language Support",
+  "displayName": "Itasca FLAC Language Support",
   "description": "Syntax highlighting for Itasca FLAC input files.",
   "version": "0.0.1",
   "publisher": "dkaramitros",
